@@ -1,0 +1,33 @@
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+
+當前連接的伺服器:<br> <span id="cdn">無法取得資訊</span>
+
+<script>
+	getCDNinfo = function() {
+	$.ajax({
+		url: "/cdn-cgi/trace",
+		success: function(data, status) {
+			let areas = "Cloudflare  馬達加斯加的塔那那利佛 - (TNR); Cloudflare 南非開普敦 - (CPT); Cloudflare 摩洛哥卡薩布蘭卡 - (CMN); Cloudflare 坦桑尼亞達累斯薩拉姆 - (DAR); Cloudflare 吉布提吉布提市 - (JIB); Cloudflare 南非德班 - (DUR); Cloudflare 南非約翰內斯堡 - (JNB); Cloudflare 盧旺達基加利 - (KGL); Cloudflare 尼日利亞拉各斯 - (LOS); Cloudflare 安哥拉羅安達 - (LAD); Cloudflare 馬薩諸塞州馬普托 - (MPM); Cloudflare 肯尼亞蒙巴薩 - (MBA); Cloudflare 利比里亞蒙羅維亞 - (ROB); Cloudflare 毛里求斯路易港 - (MRU); Cloudflare 法國留尼汪 - (RUN); Cloudflare 印度班加羅爾 - (BLR); Cloudflare 泰國曼谷 - (BKK); Cloudflare 文萊斯里巴加灣市 文萊 - (BWN); Cloudflare 菲律賓宿霧 - (CEB); Cloudflare 中國成都 - (CTU); Cloudflare 印度金奈 - (MAA); Cloudflare 孟加拉國吉大港市 - (CGP); Cloudflare 中國重慶 - (CKG); Cloudflare 斯里蘭卡科倫坡 - (CMB); Cloudflare 孟加拉國達卡 - (DAC); Cloudflare 中國東莞 - (SZX); Cloudflare 中國佛山 - (FUO); Cloudflare 中國福州 - (FOC); Cloudflare 中國廣州 - (CAN); Cloudflare 中國杭州 - (HGH); Cloudflare 越南河內 - (HAN); Cloudflare 中國衡陽 - (HNY); Cloudflare 越南胡志明市 - (SGN); Cloudflare 香港 - (HKG); Cloudflare 印度海德拉巴 - (HYD); Cloudflare 巴基斯坦伊斯蘭堡 - (ISB); Cloudflare 印度尼西亞雅加達 - (CGK); Cloudflare 中國濟南 - (TNA); Cloudflare 馬來西亞新山 - (JHB); Cloudflare 巴基斯坦卡拉奇 - (KHI); Cloudflare 尼泊爾加德滿都 - (KTM); Cloudflare 印度加爾各答 - (CCU); Cloudflare 馬來西亞吉隆坡 - (KUL); Cloudflare 巴基斯坦拉合爾 - (LHE); Cloudflare 中國廊坊 - (NAY); Cloudflare 中國洛陽 - (LYA); Cloudflare 澳門 - (MFM); Cloudflare 馬爾代夫馬累 - (MLE); Cloudflare 菲律賓馬尼拉 - (MNL); Cloudflare 印度孟買 - (BOM); Cloudflare 印度那格浦爾 - (NAG); Cloudflare 中國南寧 - (NNG); Cloudflare 印度新德里 - (DEL); Cloudflare 日本大阪 - (KIX); Cloudflare 柬埔寨金邊 - (PNH); Cloudflare 中國青島 - (TAO); Cloudflare 韓國首爾 - (ICN); Cloudflare 中國上海 - (SHA); Cloudflare 中國沉陽 - (SHE); Cloudflare 中國石家莊 - (SJW); Cloudflare 新加坡 新加坡 - (SIN); Cloudflare 中國蘇州 - (SZV); Cloudflare 台北 - (TPE); Cloudflare 不丹廷布 - (PBH); Cloudflare 中國天津 - (TSN); Cloudflare 日本東京 - (NRT); Cloudflare 蒙古烏蘭巴托 - (ULN); Cloudflare 老撾萬象 - (VTE); Cloudflare 中國武漢 - (WUH); Cloudflare 中國無錫 - (WUX); Cloudflare 中國西安 - (XIY); Cloudflare 亞美尼亞埃里溫 - (EVN); Cloudflare 中國鄭州 - (CGO); Cloudflare 中國Zuzhou - (CSX); Cloudflare 荷蘭阿姆斯特丹 - (AMS); Cloudflare 希臘雅典 - (ATH); Cloudflare 西班牙巴塞羅那 - (BCN); Cloudflare 塞爾維亞貝爾格萊德 - (BEG); Cloudflare 德國柏林 - (TXL); Cloudflare 比利時布魯塞爾 - (BRU); Cloudflare 羅馬尼亞布加勒斯特 - (OTP); Cloudflare 匈牙利布達佩斯 - (BUD); Cloudflare 摩爾多瓦基希訥烏 - (KIV); Cloudflare 丹麥哥本哈根 - (CPH); Cloudflare 愛爾蘭科克 - (ORK); Cloudflare 愛爾蘭都柏林 - (DUB); Cloudflare 杜塞爾多夫 德國 - (DUS); Cloudflare 英國愛丁堡 - (EDI); Cloudflare 德國法蘭克福 - (FRA); Cloudflare 瑞士日內瓦 - (GVA); Cloudflare 瑞典哥德堡 - (GOT); Cloudflare 德國漢堡 - (HAM); Cloudflare 芬蘭赫爾辛基 - (HEL); Cloudflare 土耳其伊斯坦布爾 - (IST); Cloudflare 烏克蘭基輔 - (KBP); Cloudflare 葡萄牙里斯本 - (LIS); Cloudflare 英國倫敦 - (LHR); Cloudflare 盧森堡市 盧森堡 - (LUX); Cloudflare 西班牙馬德里 - (MAD); Cloudflare 英國曼徹斯特 - (MAN); Cloudflare 法國馬賽 - (MRS); Cloudflare 意大利米蘭 - (MXP); Cloudflare 俄羅斯莫斯科 - (DME); Cloudflare 德國慕尼黑 - (MUC); Cloudflare 塞浦路斯尼科西亞 - (LCA); Cloudflare 挪威奧斯陸 - (OSL); Cloudflare 法國巴黎 - (CDG); Cloudflare 捷克共和國布拉格 - (PRG); Cloudflare 冰島雷克雅未克 - (KEF); Cloudflare 拉脫維亞里加 - (RIX); Cloudflare 意大利羅馬 - (FCO); Cloudflare 俄羅斯聖彼得堡 - (LED); Cloudflare 保加利亞索非亞 - (SOF); Cloudflare 瑞典斯德哥爾摩 - (ARN); Cloudflare 愛沙尼亞塔林 - (TLL); Cloudflare 希臘塞薩洛尼基 - (SKG); Cloudflare 奧地利維也納 - (VIE); Cloudflare 立陶宛維爾紐斯 - (VNO); Cloudflare 波蘭華沙 - (WAW); Cloudflare 克羅地亞薩格勒布 - (ZAG); Cloudflare 瑞士蘇黎世 - (ZRH); Cloudflare 智利阿里卡 - (ARI); Cloudflare 巴拉圭亞松森 - (ASU); Cloudflare 哥倫比亞波哥大 - (BOG); Cloudflare 阿根廷布宜諾斯艾利斯 - (EZE); Cloudflare 巴西庫裡提巴 - (CWB); Cloudflare 巴西福塔萊薩 - (FOR); Cloudflare 危地馬拉危地馬拉城 - (GUA); Cloudflare 秘魯利馬 - (LIM); Cloudflare 哥倫比亞麥德林 - (MDE); Cloudflare 巴拿馬巴拿馬城 - (PTY); Cloudflare 巴西阿雷格里港 - (POA); Cloudflare 厄瓜多爾基多 - (UIO); Cloudflare 巴西里約熱內盧 - (GIG); Cloudflare 巴西聖保羅 - (GRU); Cloudflare 智利聖地亞哥 - (SCL); Cloudflare 庫拉索島威廉斯塔德 - (CUR); Cloudflare 格林納達聖喬治 - (GND); Cloudflare 洪都拉斯特古西加爾巴 - (TGU); Cloudflare 蘇里南帕拉馬里博(pbm01); Cloudflare 約旦安曼 - (AMM); Cloudflare 伊拉克巴格達 - (BGW); Cloudflare 阿塞拜疆巴庫 - (GYD); Cloudflare 黎巴嫩貝魯特 - (BEY); Cloudflare 卡塔爾多哈 - (DOH); Cloudflare 阿拉伯聯合酋長國迪拜 - (DXB); Cloudflare 科威特科威特城 - (KWI); Cloudflare 巴林麥納麥 - (BAH); Cloudflare 阿曼馬斯喀特 - (MCT); Cloudflare 拉馬拉 - (ZDM); Cloudflare 沙特阿拉伯利雅得 - (RUH); Cloudflare 以色列特拉維夫 - (TLV); Cloudflare 美國弗吉尼亞州阿什本 - (IAD); Cloudflare 美國喬治亞州亞特蘭大 - (ATL); Cloudflare 美國馬薩諸塞州波士頓 - (BOS); Cloudflare 美國紐約州布法羅 - (BUF); Cloudflare 加拿大艾伯塔省卡爾加里 - (YYC); Cloudflare 美國北卡羅來納州夏洛特 - (CLT); Cloudflare 美國伊利諾伊州芝加哥 - (ORD); Cloudflare 美國俄亥俄州哥倫布 - (CMH); Cloudflare 美國德克薩斯州達拉斯 - (DFW); Cloudflare 美國科羅拉多州丹佛市 - (DEN); Cloudflare 美國密歇根州底特律 - (DTW); Cloudflare 美國 夏威夷 檀香山 - (HNL); Cloudflare 美國德克薩斯州休斯頓 - (IAH); Cloudflare 美國印第安納州印第安納波利斯 - (IND); Cloudflare 美國佛羅里達州傑克遜維爾 - (JAX); Cloudflare 美國密蘇里州堪薩斯城 - (MCI); Cloudflare 美國內華達州拉斯維加斯 - (LAS); Cloudflare 美國加利福尼亞州洛杉磯 - (LAX); Cloudflare 美國德克薩斯州麥卡倫 - (MFE); Cloudflare 美國田納西州孟菲斯 - (MEM); Cloudflare 墨西哥墨西哥城 - (MEX); Cloudflare 美國佛羅里達州邁阿密 - (MIA); Cloudflare 美國明尼蘇達州明尼阿波利斯 - (MSP); Cloudflare 美國阿拉巴馬州蒙哥馬利 - (MGM); Cloudflare 加拿大魁北克省蒙特利爾 - (YUL); Cloudflare 美國田納西州納什維爾 - (BNA); Cloudflare 美國新澤西州紐瓦克 - (EWR); Cloudflare 美國弗吉尼亞州諾福克 - (ORF); Cloudflare 美國東北部奧馬哈 - (OMA); Cloudflare 美國費城 - (PHL); Cloudflare 美國亞利桑那州鳳凰城 - (PHX); Cloudflare 美國賓夕法尼亞州匹茲堡 - (PIT); Cloudflare 海地太子港 - (PAP); Cloudflare 美國俄勒岡州波特蘭 - (PDX); Cloudflare 墨西哥MX 克雷塔羅 - (QRO); Cloudflare 弗吉尼亞州里士滿 - (RIC); Cloudflare 美國加利福尼亞州薩克拉曼多 - (SMF); Cloudflare 美國猶他州鹽湖城 - (SLC); Cloudflare 美國加利福尼亞州聖地亞哥 - (SAN); Cloudflare 美國加利福尼亞州聖何塞 - (SJC); Cloudflare 加拿大SK薩斯卡通 - (YXE); Cloudflare 美國華盛頓州西雅圖市 - (SEA); Cloudflare 美國密蘇里州聖路易斯 - (STL); Cloudflare 美國佛羅里達州坦帕市 - (TPA); Cloudflare 加拿大安大略省多倫多市 - (YYZ); Cloudflare 加拿大不列顛哥倫比亞省溫哥華 - (YVR); Cloudflare 美國佛羅里達州塔拉哈西 - (TLH); Cloudflare 加拿大MB 溫尼伯 - (YWG); Cloudflare 澳大利亞SA 阿德萊德 - (ADL); Cloudflare 新西蘭奧克蘭 - (AKL); Cloudflare 澳大利亞昆士蘭州布里斯班 - (BNE); Cloudflare 澳大利亞維多利亞州墨爾本市 - (MEL); Cloudflare 新喀裡多尼亞努美阿 - (NOU); Cloudflare 澳大利亞西澳大利亞州珀斯 - (PER); Cloudflare 澳大利亞新南威爾士州悉尼 - (SYD);".split(";");
+			let area = data.split("colo=")[1].split("\n")[0];
+			for (var i = 0; i < areas.length; i++) {
+				if (areas[i].indexOf(area) != -1) {
+					document.getElementById("cdn").innerHTML = areas[i];
+					break;
+				}
+			}
+		}
+	})
+}
+$(document).ready(function() {
+	getCDNinfo();
+});
+</script><br>
+
+<script type="application/javascript">
+function getgeoip(json){
+document.write("歡迎來自 ", json.country," 的訪客");
+
+}
+</script>
+
+<script type="application/javascript" src="https://api.ip.sb/geoip?callback=getgeoip"></script>
